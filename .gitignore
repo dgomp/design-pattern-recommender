@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.env
+.env
+.env.*
+*.sqlite3
+*.db
+instance/
+
+# VSCode
+.vscode/
+
+# Node/React
+frontend/node_modules/
+frontend/build/
+frontend/.env
+
+# Build do Flask
+static/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Outros
+*.bak
+*.swp
+*.swo
+
+# Arquivos de credenciais
+*.key
+*.pem
+
+# Arquivos de cache
+.cache/
+.npm/
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Arquivos do PyCharm
+.idea/
+
+# Arquivos do Windows
+*.lnk
+
+# Arquivos de lock do npm/yarn
+frontend/package-lock.json
+frontend/yarn.lock 
