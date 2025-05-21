@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 // Adiciona a fonte Orbitron no topo do arquivo (será usada inline no título)
@@ -74,6 +74,33 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    // Criar o elemento de áudio
+    audioRef.current = new Audio('/typing.mp3');
+    audioRef.current.volume = 0.3; // Ajuste o volume para 30%
+
+    // Função para tocar o som
+    const playTypingSound = () => {
+      if (audioRef.current) {
+        audioRef.current.currentTime = 0; // Reinicia o áudio
+        audioRef.current.play().catch(error => console.log('Erro ao tocar áudio:', error));
+      }
+    };
+
+    // Adicionar event listener para teclas
+    window.addEventListener('keydown', playTypingSound);
+
+    // Limpar event listener quando o componente for desmontado
+    return () => {
+      window.removeEventListener('keydown', playTypingSound);
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, []);
 
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setUseCase(e.target.value);
