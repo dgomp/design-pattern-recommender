@@ -49,7 +49,6 @@ cd frontend
 npm install
 npm run build
 cd ..
-mkdir static
 python build.py
 ```
 
