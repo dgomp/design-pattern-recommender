@@ -50,7 +50,7 @@ npm install
 npm run build
 cd ..
 mkdir static
-Copy-Item -Path frontend/build/* -Destination static/ -Recurse -Force
+python build.py
 ```
 
 ## Executando o Sistema
