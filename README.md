@@ -49,6 +49,8 @@ cd frontend
 npm install
 npm run build
 cd ..
+mkdir static
+cp -r frontend/build/* static/
 ```
 
 ## Executando o Sistema
