@@ -30,7 +30,7 @@ design-pattern/
 1. Clone o repositório:
 ```bash
 git clone https://github.com/dgomp/design-pattern-recommender.git
-cd design-pattern
+cd design-pattern-recommender
 ```
 
 2. Crie um arquivo `.env` na raiz do projeto com sua chave Gemini:
